@@ -1,15 +1,20 @@
 import React from 'react';
-import { useState } from 'react';
+import {useContext} from 'react';
+import { TodoContext } from '../todoContext/index';
 import '../styles/TodoSerach.css'
 
-const TodoSearch = ({ valueSearch, setValueSearch  }) => {
+const TodoSearch = () => {
+    
+    const { valueSearch, setValueSearch  } = useContext(TodoContext)
     
     const handelSearch = ( e ) => {
         setValueSearch(e.target.value)
     }
 
     return (
-        <input value={valueSearch} onChange={( e ) => handelSearch( e )} className="TodoSearch" placeholder="Cebolla"/>
+        <div className="div_search">
+            <input value={valueSearch} onChange={( e ) => handelSearch( e )} className="TodoSearch" placeholder="Cebolla"/>
+        </div>
     );
 };
 
