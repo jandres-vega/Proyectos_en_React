@@ -1,10 +1,12 @@
 import React from 'react';
-
-const TodoList = () => {
+import '../styles/TodoList.css';
+const TodoList = ({children}) => {
     return (
-        <div>
-        
-        </div>
+        <section>
+            <ul >
+                {children}
+            </ul>
+        </section>
     );
 };
 
